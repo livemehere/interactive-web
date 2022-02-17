@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scroll action</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="./img/stars.png" alt="" id="stars">
+        <img src="./img/moon.png" alt="" id="moon">
+        <img src="./img/mountains_behind.png" alt="" id="mountains_behind">
+        <img src="./img/mountains_front.png" alt="" id="mountains_front">
+        <h2 id="text">Moon Light</h2>
+        <button id="btn">Explore</button>
+    </section>
+    <div class="post">
+        <h1>THIS IS SCROLL ANIMATION</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aut consequuntur, debitis distinctio dolorem doloremque eaque eligendi eum ex laborum laudantium maiores nostrum qui quos rem repudiandae tempora tempore voluptas voluptates! Amet atque beatae delectus deserunt dolore esse excepturi fugiat illo impedit incidunt ipsa ipsum itaque laboriosam maiores nam necessitatibus nemo, odit quia quo ratione sapiente similique totam velit veniam, voluptates! Est facere hic minus possimus quisquam repellat suscipit! Aliquid animi cum, cumque dolor doloribus eligendi id iste mollitia omnis, possimus quos sed tempore. Accusantium consequuntur cum eligendi et in iure laborum nisi nostrum quisquam, saepe sed tempora unde.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eveniet illum officia quia similique? Consequatur deleniti eius ipsum laudantium quibusdam sequi tempore? Culpa maxime odit optio vero voluptatem. Ab at autem, blanditiis cum debitis deserunt distinctio, doloribus earum enim eos, esse explicabo facere facilis inventore iure laborum libero magni mollitia nostrum possimus quae quam quas quasi quod quos ratione recusandae saepe sapiente sed sint suscipit tempora temporibus tenetur vel voluptas voluptatibus voluptatum. Ab aperiam at culpa dolore eligendi, error et excepturi hic illum iure, magnam magni molestias nam necessitatibus nobis nulla obcaecati officiis praesentium quisquam quo quod rerum vitae voluptatibus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam assumenda autem cum cupiditate deleniti, doloremque doloribus eos facere fugit in ipsa laudantium libero nam neque nobis, nostrum optio perspiciatis possimus provident quidem quod, recusandae soluta suscipit voluptas voluptates voluptatibus? Ab accusamus aperiam consequatur cum dignissimos dolorum, earum ex exercitationem explicabo facilis, impedit itaque iusto, mollitia odit optio perspiciatis placeat quaerat quasi qui ratione repellendus similique soluta suscipit tempora voluptates! Atque corporis excepturi id, odit provident rerum? Adipisci inventore officia perspiciatis suscipit tenetur. Accusamus accusantium, adipisci aliquam beatae consequuntur delectus eos eum eveniet explicabo harum id labore modi optio perferendis possimus quisquam reprehenderit unde vero vitae voluptatibus. Dolorum nesciunt officia officiis placeat quae reiciendis rem totam voluptate! Accusantium ad adipisci consectetur cum ea enim error eveniet expedita facere facilis illo impedit magnam magni molestias nisi non obcaecati omnis quisquam quos sed similique temporibus totam vero voluptate, voluptatibus! Dolorem eum expedita ipsum nisi officia ratione, repellendus. Alias architecto beatae blanditiis cupiditate deleniti dolore illo ipsa nostrum quasi sapiente. Accusamus alias, assumenda eaque eligendi excepturi iusto labore libero minus molestias, mollitia necessitatibus, nisi odio odit quae qui quia sit tempora veritatis voluptas voluptatem. Nemo perferendis quam quidem quos reprehenderit soluta vel.</p>
+    </div>
+    <script>
+        let header = document.querySelector('header');
+        let stars = document.querySelector('#stars');
+        let moon = document.querySelector('#moon');
+        let mountains_behind = document.querySelector('#mountains_behind');
+        let text = document.querySelector('#text');
+        let btn = document.querySelector('#btn');
+        let post = document.querySelector('.post');
+
+        window.addEventListener('scroll',(e)=>{
+            let y = window.scrollY;
+            stars.style.top = (y * 0.2 )+ 'px';
+            stars.style.left = (y * 0.2 )+ 'px';
+            mountains_behind.style.top = (y * 0.2 )+ 'px';
+            header.style.top = (y * 0.6 )+ 'px';
+            moon.style.top = (y * 0.6 )+ 'px';
+            text.style.right = (y*2 -500)+ 'px';
+        })
+        btn.addEventListener('click',()=>{
+            console.log('click')
+            post.scrollIntoView({behavior: "smooth"})
+        })
+
+    </script>
+</body>
+</html>
